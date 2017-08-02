@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=C:\Users\Clash\Desktop\daeun kim _test\11_Gamma_Simple\2_Top\Top\top.ncd
+OUTFILE=C:\Users\Clash\Desktop\daeun kim _test\11_Gamma_Simple\2_Top\Top\top.bit
+FAMILY=Spartan6
+PART=xc6slx150-2fgg484
+WORKINGDIR=C:\Users\Clash\Desktop\daeun kim _test\11_Gamma_Simple\2_Top\Top
+LICENSE=ISE
+USER_INFO=210731706_1777491943_210559937_120

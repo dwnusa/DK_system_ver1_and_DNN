@@ -1,0 +1,843 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.08 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.08 secs
+ 
+--> Reading design: top.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "top.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "top"
+Output Format                      : NGC
+Target Device                      : xc6slx150-2-fgg484
+
+---- Source Options
+Top Module Name                    : top
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+---- Other Options
+Cores Search Directories           : {"ipcore_dir" "../../1_HDL_Netlist"  }
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Analyzing Verilog file "C:\Users\Clash\Desktop\daeun kim _test\11_Gamma_Simple\1_HDL_Netlist\dkver1_cw_bb.v" into library work
+Parsing module <dkver1_cw>.
+Parsing VHDL file "C:\Users\Clash\Desktop\daeun kim _test\11_Gamma_Simple\2_Top\Top\ipcore_dir\clkgen.vhd" into library work
+Parsing entity <clkgen>.
+Parsing architecture <xilinx> of entity <clkgen>.
+Parsing VHDL file "C:\Users\Clash\Desktop\daeun kim _test\11_Gamma_Simple\2_Top\Top\ipcore_dir\fifo.vhd" into library work
+Parsing entity <fifo>.
+Parsing architecture <fifo_a> of entity <fifo>.
+Parsing VHDL file "C:\Users\Clash\Desktop\daeun kim _test\11_Gamma_Simple\2_Top\Top\okLibrary.vhd" into library work
+Parsing entity <okHost>.
+Parsing architecture <archHost> of entity <okhost>.
+Parsing entity <okWireOR>.
+Parsing architecture <archWireOR> of entity <okwireor>.
+Parsing package <FRONTPANEL>.
+Parsing VHDL file "C:\Users\Clash\Desktop\daeun kim _test\11_Gamma_Simple\2_Top\Top\top.vhd" into library work
+Parsing entity <top>.
+Parsing architecture <Behavioral> of entity <top>.
+WARNING:HDLCompiler:946 - "C:\Users\Clash\Desktop\daeun kim _test\11_Gamma_Simple\2_Top\Top\top.vhd" Line 310: Actual for formal port ep_ready is neither a static name nor a globally static expression
+WARNING:HDLCompiler:946 - "C:\Users\Clash\Desktop\daeun kim _test\11_Gamma_Simple\2_Top\Top\top.vhd" Line 315: Actual for formal port ep_ready is neither a static name nor a globally static expression
+WARNING:HDLCompiler:946 - "C:\Users\Clash\Desktop\daeun kim _test\11_Gamma_Simple\2_Top\Top\top.vhd" Line 320: Actual for formal port ep_ready is neither a static name nor a globally static expression
+WARNING:HDLCompiler:946 - "C:\Users\Clash\Desktop\daeun kim _test\11_Gamma_Simple\2_Top\Top\top.vhd" Line 325: Actual for formal port ep_ready is neither a static name nor a globally static expression
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating entity <top> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <clkgen> (architecture <xilinx>) from library <work>.
+
+Elaborating entity <okHost> (architecture <archHost>) from library <work>.
+WARNING:HDLCompiler:1127 - "C:\Users\Clash\Desktop\daeun kim _test\11_Gamma_Simple\2_Top\Top\okLibrary.vhd" Line 66: Assignment to nothc0 ignored, since the identifier is never used
+WARNING:HDLCompiler:89 - "C:\Users\Clash\Desktop\daeun kim _test\11_Gamma_Simple\2_Top\Top\okLibrary.vhd" Line 38: <fdre> remains a black-box since it has no binding entity.
+
+Elaborating entity <okWireOR> (architecture <archWireOR>) with generics from library <work>.
+
+Elaborating entity <fifo> (architecture <fifo_a>) from library <work>.
+Going to verilog side to elaborate module dkver1_cw
+
+Elaborating module <dkver1_cw>.
+Back to vhdl to continue elaboration
+WARNING:HDLCompiler:634 - "C:\Users\Clash\Desktop\daeun kim _test\11_Gamma_Simple\2_Top\Top\top.vhd" Line 241: Net <ep20wire[31]> does not have a driver.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <top>.
+    Related source file is "C:\Users\Clash\Desktop\daeun kim _test\11_Gamma_Simple\2_Top\Top\top.vhd".
+INFO:Xst:3210 - "C:\Users\Clash\Desktop\daeun kim _test\11_Gamma_Simple\2_Top\Top\top.vhd" line 308: Output port <ep_blockstrobe> of the instance <epA0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\Clash\Desktop\daeun kim _test\11_Gamma_Simple\2_Top\Top\top.vhd" line 313: Output port <ep_blockstrobe> of the instance <epA1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\Clash\Desktop\daeun kim _test\11_Gamma_Simple\2_Top\Top\top.vhd" line 318: Output port <ep_blockstrobe> of the instance <epA2> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\Clash\Desktop\daeun kim _test\11_Gamma_Simple\2_Top\Top\top.vhd" line 323: Output port <ep_blockstrobe> of the instance <epA3> is unconnected or connected to loadless signal.
+WARNING:Xst:2935 - Signal 'ep20wire<31:4>', unconnected in block 'top', is tied to its initial value (0000000000000000000000000000).
+    Register <wr_en1> equivalent to <wr_en0> has been removed
+    Register <wr_en3> equivalent to <wr_en2> has been removed
+    Found 32-bit register for signal <s_cnt>.
+    Found 32-bit register for signal <s_fullcnt0>.
+    Found 32-bit register for signal <s_fullcnt1>.
+    Found 32-bit register for signal <s_fullcnt2>.
+    Found 32-bit register for signal <s_fullcnt3>.
+    Found 2-bit register for signal <rawpair>.
+    Found 32-bit register for signal <s_datain0>.
+    Found 32-bit register for signal <s_datain1>.
+    Found 32-bit register for signal <s_datain2>.
+    Found 32-bit register for signal <s_datain3>.
+    Found 1-bit register for signal <wr_en0>.
+    Found 1-bit register for signal <wr_en2>.
+    Found 1-bit register for signal <ep20wire<3>>.
+    Found 1-bit register for signal <ep20wire<2>>.
+    Found 1-bit register for signal <ep20wire<1>>.
+    Found 1-bit register for signal <ep20wire<0>>.
+    Found 32-bit adder for signal <s_cnt[31]_GND_8_o_add_2_OUT> created at line 271.
+    Found 32-bit adder for signal <s_fullcnt0[31]_GND_8_o_add_3_OUT> created at line 279.
+    Found 32-bit adder for signal <s_fullcnt1[31]_GND_8_o_add_4_OUT> created at line 280.
+    Found 32-bit adder for signal <s_fullcnt2[31]_GND_8_o_add_7_OUT> created at line 283.
+    Found 32-bit adder for signal <s_fullcnt3[31]_GND_8_o_add_8_OUT> created at line 284.
+    Found 2-bit adder for signal <rawpair[1]_GND_8_o_add_21_OUT> created at line 329.
+    Summary:
+	inferred   6 Adder/Subtractor(s).
+	inferred 296 D-type flip-flop(s).
+Unit <top> synthesized.
+
+Synthesizing Unit <clkgen>.
+    Related source file is "C:\Users\Clash\Desktop\daeun kim _test\11_Gamma_Simple\2_Top\Top\ipcore_dir\clkgen.vhd".
+    Summary:
+	no macro.
+Unit <clkgen> synthesized.
+
+Synthesizing Unit <okHost>.
+    Related source file is "C:\Users\Clash\Desktop\daeun kim _test\11_Gamma_Simple\2_Top\Top\okLibrary.vhd".
+    Set property "IOB = TRUE" for instance <iob_regs[0].regin0>.
+    Set property "IOB = TRUE" for instance <iob_regs[0].regout0>.
+    Set property "IOB = TRUE" for instance <iob_regs[0].regvalid>.
+    Set property "IOB = TRUE" for instance <iob_regs[1].regin0>.
+    Set property "IOB = TRUE" for instance <iob_regs[1].regout0>.
+    Set property "IOB = TRUE" for instance <iob_regs[1].regvalid>.
+    Set property "IOB = TRUE" for instance <iob_regs[2].regin0>.
+    Set property "IOB = TRUE" for instance <iob_regs[2].regout0>.
+    Set property "IOB = TRUE" for instance <iob_regs[2].regvalid>.
+    Set property "IOB = TRUE" for instance <iob_regs[3].regin0>.
+    Set property "IOB = TRUE" for instance <iob_regs[3].regout0>.
+    Set property "IOB = TRUE" for instance <iob_regs[3].regvalid>.
+    Set property "IOB = TRUE" for instance <iob_regs[4].regin0>.
+    Set property "IOB = TRUE" for instance <iob_regs[4].regout0>.
+    Set property "IOB = TRUE" for instance <iob_regs[4].regvalid>.
+    Set property "IOB = TRUE" for instance <iob_regs[5].regin0>.
+    Set property "IOB = TRUE" for instance <iob_regs[5].regout0>.
+    Set property "IOB = TRUE" for instance <iob_regs[5].regvalid>.
+    Set property "IOB = TRUE" for instance <iob_regs[6].regin0>.
+    Set property "IOB = TRUE" for instance <iob_regs[6].regout0>.
+    Set property "IOB = TRUE" for instance <iob_regs[6].regvalid>.
+    Set property "IOB = TRUE" for instance <iob_regs[7].regin0>.
+    Set property "IOB = TRUE" for instance <iob_regs[7].regout0>.
+    Set property "IOB = TRUE" for instance <iob_regs[7].regvalid>.
+    Set property "IOB = TRUE" for instance <iob_regs[8].regin0>.
+    Set property "IOB = TRUE" for instance <iob_regs[8].regout0>.
+    Set property "IOB = TRUE" for instance <iob_regs[8].regvalid>.
+    Set property "IOB = TRUE" for instance <iob_regs[9].regin0>.
+    Set property "IOB = TRUE" for instance <iob_regs[9].regout0>.
+    Set property "IOB = TRUE" for instance <iob_regs[9].regvalid>.
+    Set property "IOB = TRUE" for instance <iob_regs[10].regin0>.
+    Set property "IOB = TRUE" for instance <iob_regs[10].regout0>.
+    Set property "IOB = TRUE" for instance <iob_regs[10].regvalid>.
+    Set property "IOB = TRUE" for instance <iob_regs[11].regin0>.
+    Set property "IOB = TRUE" for instance <iob_regs[11].regout0>.
+    Set property "IOB = TRUE" for instance <iob_regs[11].regvalid>.
+    Set property "IOB = TRUE" for instance <iob_regs[12].regin0>.
+    Set property "IOB = TRUE" for instance <iob_regs[12].regout0>.
+    Set property "IOB = TRUE" for instance <iob_regs[12].regvalid>.
+    Set property "IOB = TRUE" for instance <iob_regs[13].regin0>.
+    Set property "IOB = TRUE" for instance <iob_regs[13].regout0>.
+    Set property "IOB = TRUE" for instance <iob_regs[13].regvalid>.
+    Set property "IOB = TRUE" for instance <iob_regs[14].regin0>.
+    Set property "IOB = TRUE" for instance <iob_regs[14].regout0>.
+    Set property "IOB = TRUE" for instance <iob_regs[14].regvalid>.
+    Set property "IOB = TRUE" for instance <iob_regs[15].regin0>.
+    Set property "IOB = TRUE" for instance <iob_regs[15].regout0>.
+    Set property "IOB = TRUE" for instance <iob_regs[15].regvalid>.
+    Set property "IOB = TRUE" for instance <iob_regs[16].regin0>.
+    Set property "IOB = TRUE" for instance <iob_regs[16].regout0>.
+    Set property "IOB = TRUE" for instance <iob_regs[16].regvalid>.
+    Set property "IOB = TRUE" for instance <iob_regs[17].regin0>.
+    Set property "IOB = TRUE" for instance <iob_regs[17].regout0>.
+    Set property "IOB = TRUE" for instance <iob_regs[17].regvalid>.
+    Set property "IOB = TRUE" for instance <iob_regs[18].regin0>.
+    Set property "IOB = TRUE" for instance <iob_regs[18].regout0>.
+    Set property "IOB = TRUE" for instance <iob_regs[18].regvalid>.
+    Set property "IOB = TRUE" for instance <iob_regs[19].regin0>.
+    Set property "IOB = TRUE" for instance <iob_regs[19].regout0>.
+    Set property "IOB = TRUE" for instance <iob_regs[19].regvalid>.
+    Set property "IOB = TRUE" for instance <iob_regs[20].regin0>.
+    Set property "IOB = TRUE" for instance <iob_regs[20].regout0>.
+    Set property "IOB = TRUE" for instance <iob_regs[20].regvalid>.
+    Set property "IOB = TRUE" for instance <iob_regs[21].regin0>.
+    Set property "IOB = TRUE" for instance <iob_regs[21].regout0>.
+    Set property "IOB = TRUE" for instance <iob_regs[21].regvalid>.
+    Set property "IOB = TRUE" for instance <iob_regs[22].regin0>.
+    Set property "IOB = TRUE" for instance <iob_regs[22].regout0>.
+    Set property "IOB = TRUE" for instance <iob_regs[22].regvalid>.
+    Set property "IOB = TRUE" for instance <iob_regs[23].regin0>.
+    Set property "IOB = TRUE" for instance <iob_regs[23].regout0>.
+    Set property "IOB = TRUE" for instance <iob_regs[23].regvalid>.
+    Set property "IOB = TRUE" for instance <iob_regs[24].regin0>.
+    Set property "IOB = TRUE" for instance <iob_regs[24].regout0>.
+    Set property "IOB = TRUE" for instance <iob_regs[24].regvalid>.
+    Set property "IOB = TRUE" for instance <iob_regs[25].regin0>.
+    Set property "IOB = TRUE" for instance <iob_regs[25].regout0>.
+    Set property "IOB = TRUE" for instance <iob_regs[25].regvalid>.
+    Set property "IOB = TRUE" for instance <iob_regs[26].regin0>.
+    Set property "IOB = TRUE" for instance <iob_regs[26].regout0>.
+    Set property "IOB = TRUE" for instance <iob_regs[26].regvalid>.
+    Set property "IOB = TRUE" for instance <iob_regs[27].regin0>.
+    Set property "IOB = TRUE" for instance <iob_regs[27].regout0>.
+    Set property "IOB = TRUE" for instance <iob_regs[27].regvalid>.
+    Set property "IOB = TRUE" for instance <iob_regs[28].regin0>.
+    Set property "IOB = TRUE" for instance <iob_regs[28].regout0>.
+    Set property "IOB = TRUE" for instance <iob_regs[28].regvalid>.
+    Set property "IOB = TRUE" for instance <iob_regs[29].regin0>.
+    Set property "IOB = TRUE" for instance <iob_regs[29].regout0>.
+    Set property "IOB = TRUE" for instance <iob_regs[29].regvalid>.
+    Set property "IOB = TRUE" for instance <iob_regs[30].regin0>.
+    Set property "IOB = TRUE" for instance <iob_regs[30].regout0>.
+    Set property "IOB = TRUE" for instance <iob_regs[30].regvalid>.
+    Set property "IOB = TRUE" for instance <iob_regs[31].regin0>.
+    Set property "IOB = TRUE" for instance <iob_regs[31].regout0>.
+    Set property "IOB = TRUE" for instance <iob_regs[31].regvalid>.
+    Set property "IOB = TRUE" for instance <regctrlout0>.
+    Set property "IOB = TRUE" for instance <regctrlout1>.
+    Set property "IOB = TRUE" for instance <regctrlout2>.
+    Set property "IOB = TRUE" for instance <regctrlin0a>.
+    Set property "IOB = TRUE" for instance <regctrlin1a>.
+    Set property "IOB = TRUE" for instance <regctrlin2a>.
+    Set property "IOB = TRUE" for instance <regctrlin3a>.
+    Summary:
+	no macro.
+Unit <okHost> synthesized.
+
+Synthesizing Unit <okWireOR>.
+    Related source file is "C:\Users\Clash\Desktop\daeun kim _test\11_Gamma_Simple\2_Top\Top\okLibrary.vhd".
+        N = 5
+    Summary:
+	no macro.
+Unit <okWireOR> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 6
+ 2-bit adder                                           : 1
+ 32-bit adder                                          : 5
+# Registers                                            : 16
+ 1-bit register                                        : 6
+ 2-bit register                                        : 1
+ 32-bit register                                       : 9
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Reading core <../../1_HDL_Netlist/dkver1_cw.ngc>.
+Reading core <../../1_HDL_Netlist/xlpersistentdff.ngc>.
+Reading core <../../1_HDL_Netlist/cntr_11_0_63594e4e10f743b9.ngc>.
+Reading Secure Unit <blk00000001>.
+Reading core <../../1_HDL_Netlist/cntr_11_0_80e8f2a7fd3ba205.ngc>.
+Reading Secure Unit <blk00000001>.
+Reading core <../../1_HDL_Netlist/cntr_11_0_81606633e3bc7b5b.ngc>.
+Reading Secure Unit <blk00000001>.
+Reading core <../../1_HDL_Netlist/addsb_11_0_c56061fb4dfcdca4.ngc>.
+Reading Secure Unit <blk00000001>.
+Reading core <../../1_HDL_Netlist/cntr_11_0_00fd590c4e52f518.ngc>.
+Reading Secure Unit <blk00000001>.
+Reading core <okWireIn.ngc>.
+Reading core <okWireOut.ngc>.
+Reading core <okBTPipeOut.ngc>.
+Reading core <ipcore_dir/fifo.ngc>.
+Reading core <okCoreHarness.ngc>.
+Reading core <TFIFO64x8a_64x8b.ngc>.
+Loading core <xlpersistentdff> for timing and area information for instance <persistentdff_inst>.
+Loading core <cntr_11_0_63594e4e10f743b9> for timing and area information for instance <dkver1_x0/sigseparation1_1d_9e1277b02d/counter/comp3.core_instance3>.
+Loading core <cntr_11_0_80e8f2a7fd3ba205> for timing and area information for instance <dkver1_x0/sigmux_1d_7b192397cd/counter/comp2.core_instance2>.
+Loading core <cntr_11_0_81606633e3bc7b5b> for timing and area information for instance <dkver1_x0/sigdetect_10d_019b4552c7/counter/comp1.core_instance1>.
+Loading core <addsb_11_0_c56061fb4dfcdca4> for timing and area information for instance <dkver1_x0/offsetctrl_1d_722b8ff6b9/addsub/comp0.core_instance0>.
+Loading core <addsb_11_0_c56061fb4dfcdca4> for timing and area information for instance <dkver1_x0/offsetctrl_1d_722b8ff6b9/addsub1/comp0.core_instance0>.
+Loading core <addsb_11_0_c56061fb4dfcdca4> for timing and area information for instance <dkver1_x0/offsetctrl_1d_722b8ff6b9/addsub2/comp0.core_instance0>.
+Loading core <addsb_11_0_c56061fb4dfcdca4> for timing and area information for instance <dkver1_x0/offsetctrl_1d_722b8ff6b9/addsub3/comp0.core_instance0>.
+Loading core <cntr_11_0_00fd590c4e52f518> for timing and area information for instance <dkver1_x0/offsetctrl_3d_dcaf28bbd4/counter/comp0.core_instance0>.
+Loading core <dkver1_cw> for timing and area information for instance <U0_dkver1_cw>.
+Loading core <okWireIn> for timing and area information for instance <wi00>.
+Loading core <okWireOut> for timing and area information for instance <wi20>.
+Loading core <okBTPipeOut> for timing and area information for instance <epA0>.
+Loading core <okBTPipeOut> for timing and area information for instance <epA1>.
+Loading core <okBTPipeOut> for timing and area information for instance <epA2>.
+Loading core <okBTPipeOut> for timing and area information for instance <epA3>.
+Loading core <fifo> for timing and area information for instance <u0_fifo>.
+Loading core <fifo> for timing and area information for instance <u1_fifo>.
+Loading core <fifo> for timing and area information for instance <u2_fifo>.
+Loading core <fifo> for timing and area information for instance <u3_fifo>.
+Loading core <TFIFO64x8a_64x8b> for timing and area information for instance <core0/a0/cb0>.
+Loading core <okCoreHarness> for timing and area information for instance <core0>.
+
+Synthesizing (advanced) Unit <top>.
+The following registers are absorbed into counter <s_cnt>: 1 register on signal <s_cnt>.
+The following registers are absorbed into counter <rawpair>: 1 register on signal <rawpair>.
+The following registers are absorbed into counter <s_fullcnt0>: 1 register on signal <s_fullcnt0>.
+The following registers are absorbed into counter <s_fullcnt1>: 1 register on signal <s_fullcnt1>.
+The following registers are absorbed into counter <s_fullcnt2>: 1 register on signal <s_fullcnt2>.
+The following registers are absorbed into counter <s_fullcnt3>: 1 register on signal <s_fullcnt3>.
+Unit <top> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Counters                                             : 6
+ 2-bit up counter                                      : 1
+ 32-bit up counter                                     : 5
+# Registers                                            : 237
+ Flip-Flops                                            : 237
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+INFO:Xst:2261 - The FF/Latch <s_datain2_0> in Unit <top> is equivalent to the following 3 FFs/Latches, which will be removed : <s_datain2_16> <s_datain3_0> <s_datain3_16> 
+INFO:Xst:2261 - The FF/Latch <s_datain2_1> in Unit <top> is equivalent to the following 3 FFs/Latches, which will be removed : <s_datain2_17> <s_datain3_1> <s_datain3_17> 
+INFO:Xst:2146 - In block <top>, Counter <s_fullcnt0> <s_fullcnt1> are equivalent, XST will keep only <s_fullcnt0>.
+INFO:Xst:2146 - In block <top>, Counter <s_fullcnt2> <s_fullcnt3> are equivalent, XST will keep only <s_fullcnt2>.
+WARNING:Xst:2677 - Node <s_fullcnt0_25> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <s_fullcnt0_26> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <s_fullcnt0_27> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <s_fullcnt0_28> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <s_fullcnt0_29> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <s_fullcnt0_30> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <s_fullcnt0_31> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <s_cnt_29> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <s_cnt_30> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <s_cnt_31> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <s_fullcnt2_25> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <s_fullcnt2_26> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <s_fullcnt2_27> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <s_fullcnt2_28> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <s_fullcnt2_29> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <s_fullcnt2_30> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <s_fullcnt2_31> of sequential type is unconnected in block <top>.
+
+Optimizing unit <top> ...
+
+Optimizing unit <okHost> ...
+INFO:Xst:2261 - The FF/Latch <rawpair_0> in Unit <top> is equivalent to the following FF/Latch, which will be removed : <s_cnt_0> 
+INFO:Xst:2261 - The FF/Latch <rawpair_1> in Unit <top> is equivalent to the following FF/Latch, which will be removed : <s_cnt_1> 
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block top, actual ratio is 2.
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.rsts/ram_empty_i> in Unit <u3_fifo> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.rsts/ram_empty_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_i> in Unit <u3_fifo> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_1> in Unit <u3_fifo> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> in Unit <u3_fifo> is equivalent to the following 2 FFs/Latches : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_1> <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.rsts/ram_empty_i> in Unit <u2_fifo> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.rsts/ram_empty_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_i> in Unit <u2_fifo> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_1> in Unit <u2_fifo> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> in Unit <u2_fifo> is equivalent to the following 2 FFs/Latches : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_1> <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.rsts/ram_empty_i> in Unit <u1_fifo> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.rsts/ram_empty_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_i> in Unit <u1_fifo> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_1> in Unit <u1_fifo> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> in Unit <u1_fifo> is equivalent to the following 2 FFs/Latches : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_1> <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.rsts/ram_empty_i> in Unit <u0_fifo> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.rsts/ram_empty_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_i> in Unit <u0_fifo> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_1> in Unit <u0_fifo> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> in Unit <u0_fifo> is equivalent to the following 2 FFs/Latches : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_1> <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <core0/a0/pc0/sync_interrupt_flop> in Unit <okHI/core0> is equivalent to the following FF/Latch : <core0/a0/pc0/sync_sleep_flop> 
+INFO:Xst:2260 - The FF/Latch <U0/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> in Unit <BU2> is equivalent to the following FF/Latch : <U0/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/grf.rf/gl0.wr/gwss.wsts/ram_full_i> in Unit <BU2> is equivalent to the following FF/Latch : <U0/grf.rf/gl0.wr/gwss.wsts/ram_full_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/grf.rf/gl0.rd/grss.rsts/ram_empty_i> in Unit <BU2> is equivalent to the following FF/Latch : <U0/grf.rf/gl0.rd/grss.rsts/ram_empty_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.rsts/ram_empty_i> in Unit <u3_fifo> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.rsts/ram_empty_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_i> in Unit <u3_fifo> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_1> in Unit <u3_fifo> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> in Unit <u3_fifo> is equivalent to the following 2 FFs/Latches : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_1> <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.rsts/ram_empty_i> in Unit <u2_fifo> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.rsts/ram_empty_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_i> in Unit <u2_fifo> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_1> in Unit <u2_fifo> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> in Unit <u2_fifo> is equivalent to the following 2 FFs/Latches : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_1> <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.rsts/ram_empty_i> in Unit <u1_fifo> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.rsts/ram_empty_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_i> in Unit <u1_fifo> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_1> in Unit <u1_fifo> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> in Unit <u1_fifo> is equivalent to the following 2 FFs/Latches : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_1> <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.rsts/ram_empty_i> in Unit <u0_fifo> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.rsts/ram_empty_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_i> in Unit <u0_fifo> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_1> in Unit <u0_fifo> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> in Unit <u0_fifo> is equivalent to the following 2 FFs/Latches : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_1> <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <core0/a0/pc0/sync_interrupt_flop> in Unit <okHI/core0> is equivalent to the following FF/Latch : <core0/a0/pc0/sync_sleep_flop> 
+INFO:Xst:2260 - The FF/Latch <U0/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> in Unit <BU2> is equivalent to the following FF/Latch : <U0/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/grf.rf/gl0.wr/gwss.wsts/ram_full_i> in Unit <BU2> is equivalent to the following FF/Latch : <U0/grf.rf/gl0.wr/gwss.wsts/ram_full_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/grf.rf/gl0.rd/grss.rsts/ram_empty_i> in Unit <BU2> is equivalent to the following FF/Latch : <U0/grf.rf/gl0.rd/grss.rsts/ram_empty_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> in Unit <BU2> is equivalent to the following FF/Latch : <U0/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/grf.rf/gl0.wr/gwss.wsts/ram_full_i> in Unit <BU2> is equivalent to the following FF/Latch : <U0/grf.rf/gl0.wr/gwss.wsts/ram_full_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/grf.rf/gl0.rd/grss.rsts/ram_empty_i> in Unit <BU2> is equivalent to the following FF/Latch : <U0/grf.rf/gl0.rd/grss.rsts/ram_empty_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> in Unit <BU2> is equivalent to the following FF/Latch : <U0/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/grf.rf/gl0.wr/gwss.wsts/ram_full_i> in Unit <BU2> is equivalent to the following FF/Latch : <U0/grf.rf/gl0.wr/gwss.wsts/ram_full_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/grf.rf/gl0.rd/grss.rsts/ram_empty_i> in Unit <BU2> is equivalent to the following FF/Latch : <U0/grf.rf/gl0.rd/grss.rsts/ram_empty_fb_i> 
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 310
+ Flip-Flops                                            : 310
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : top.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 5019
+#      GND                         : 21
+#      INV                         : 69
+#      LUT1                        : 347
+#      LUT2                        : 713
+#      LUT3                        : 165
+#      LUT4                        : 402
+#      LUT5                        : 362
+#      LUT6                        : 1007
+#      LUT6_2                      : 50
+#      MUXCY                       : 860
+#      MUXF7                       : 258
+#      MUXF8                       : 128
+#      VCC                         : 15
+#      XORCY                       : 622
+# FlipFlops/Latches                : 2833
+#      FD                          : 309
+#      FDC                         : 583
+#      FDCE                        : 437
+#      FDE                         : 758
+#      FDP                         : 93
+#      FDPE                        : 16
+#      FDR                         : 33
+#      FDRE                        : 602
+#      FDSE                        : 2
+# RAMS                             : 250
+#      RAM128X1S                   : 8
+#      RAM32M                      : 4
+#      RAM64M                      : 2
+#      RAM64X1D                    : 2
+#      RAMB16BWER                  : 234
+# Shift Registers                  : 117
+#      SRL16E                      : 116
+#      SRLC16E                     : 1
+# Clock Buffers                    : 3
+#      BUFG                        : 3
+# IO Buffers                       : 106
+#      IBUF                        : 60
+#      IBUFG                       : 2
+#      IOBUF                       : 33
+#      OBUF                        : 11
+# DCMs                             : 2
+#      DCM_SP                      : 2
+# Others                           : 1
+#      DNA_PORT                    : 1
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6slx150fgg484-2 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:            2730  out of  184304     1%  
+ Number of Slice LUTs:                 3276  out of  92152     3%  
+    Number used as Logic:              3115  out of  92152     3%  
+    Number used as Memory:              161  out of  21680     0%  
+       Number used as RAM:               44
+       Number used as SRL:              117
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:   4694
+   Number with an unused Flip Flop:    1964  out of   4694    41%  
+   Number with an unused LUT:          1418  out of   4694    30%  
+   Number of fully used LUT-FF pairs:  1312  out of   4694    27%  
+   Number of unique control sets:       115
+
+IO Utilization: 
+ Number of IOs:                         106
+ Number of bonded IOBs:                 106  out of    338    31%  
+    IOB Flip Flops/Latches:             103
+
+Specific Feature Utilization:
+ Number of Block RAM/FIFO:              234  out of    268    87%  
+    Number using Block RAM only:        234
+ Number of BUFG/BUFGCTRLs:                3  out of     16    18%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------------------------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)                                      | Load  |
+-----------------------------------+------------------------------------------------------------+-------+
+sys_clk                            | DCM_SP:CLKFX                                               | 1810  |
+okUH<0>                            | DCM_SP:CLK0                                                | 1622  |
+okHI/core0/okHE<41>                | NONE(okHI/core0/core0/a0/pm0/ram_1k_generate.s6.kcpsm6_rom)| 1     |
+-----------------------------------+------------------------------------------------------------+-------+
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -2
+
+   Minimum period: 9.295ns (Maximum Frequency: 107.582MHz)
+   Minimum input arrival time before clock: 6.602ns
+   Maximum output required time after clock: 5.142ns
+   Maximum combinational path delay: No path found
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'sys_clk'
+  Clock period: 8.220ns (frequency: 121.651MHz)
+  Total number of paths / destination ports: 28069 / 8118
+-------------------------------------------------------------------------
+Delay:               8.220ns (Levels of Logic = 12)
+  Source:            sec_inst (FF)
+  Destination:       U0_dkver1_cw/dkver1_x0/sigdetect_10d_019b4552c7/relational/op_mem_32_22_0 (FF)
+  Source Clock:      sys_clk rising
+  Destination Clock: sys_clk rising
+
+  Data Path: sec_inst to U0_dkver1_cw/dkver1_x0/sigdetect_10d_019b4552c7/relational/op_mem_32_22_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     SEC:C->out            2   0.525   1.181  sec_inst (sec_net)
+     end scope: 'U0_dkver1_cw/dkver1_x0/offsetctrl_1d_722b8ff6b9/addsub/comp0.core_instance0/blk00000001:S(15)'
+     end scope: 'U0_dkver1_cw/dkver1_x0/offsetctrl_1d_722b8ff6b9/addsub/comp0.core_instance0:s(15)'
+     LUT6:I0->O            1   0.254   1.137  dkver1_x0/offsetctrl_1d_722b8ff6b9/addsub/Mmux_core_s[20]_GND_18_o_MUX_33_o12 (dkver1_x0/offsetctrl_1d_722b8ff6b9/addsub/Mmux_core_s[20]_GND_18_o_MUX_33_o11)
+     LUT6:I0->O           14   0.254   1.355  dkver1_x0/offsetctrl_1d_722b8ff6b9/addsub/Mmux_core_s[20]_GND_18_o_MUX_33_o13 (dkver1_x0/offsetctrl_1d_722b8ff6b9/addsub/core_s[20]_GND_18_o_MUX_33_o)
+     LUT3:I0->O            3   0.235   1.042  dkver1_x0/offsetctrl_1d_722b8ff6b9/addsub/Mmux_conv_s15 (dkver1_x0/addsub_s_net_x1(0))
+     LUT4:I0->O            1   0.254   0.000  dkver1_x0/sigdetect_10d_019b4552c7/relational/Mcompar_result_18_3_rel_lut(0) (dkver1_x0/sigdetect_10d_019b4552c7/relational/Mcompar_result_18_3_rel_lut(0))
+     MUXCY:S->O            1   0.215   0.000  dkver1_x0/sigdetect_10d_019b4552c7/relational/Mcompar_result_18_3_rel_cy(0) (dkver1_x0/sigdetect_10d_019b4552c7/relational/Mcompar_result_18_3_rel_cy(0))
+     MUXCY:CI->O           1   0.023   0.000  dkver1_x0/sigdetect_10d_019b4552c7/relational/Mcompar_result_18_3_rel_cy(1) (dkver1_x0/sigdetect_10d_019b4552c7/relational/Mcompar_result_18_3_rel_cy(1))
+     MUXCY:CI->O           1   0.023   0.000  dkver1_x0/sigdetect_10d_019b4552c7/relational/Mcompar_result_18_3_rel_cy(2) (dkver1_x0/sigdetect_10d_019b4552c7/relational/Mcompar_result_18_3_rel_cy(2))
+     MUXCY:CI->O           1   0.023   0.000  dkver1_x0/sigdetect_10d_019b4552c7/relational/Mcompar_result_18_3_rel_cy(3) (dkver1_x0/sigdetect_10d_019b4552c7/relational/Mcompar_result_18_3_rel_cy(3))
+     MUXCY:CI->O           1   0.023   0.000  dkver1_x0/sigdetect_10d_019b4552c7/relational/Mcompar_result_18_3_rel_cy(4) (dkver1_x0/sigdetect_10d_019b4552c7/relational/Mcompar_result_18_3_rel_cy(4))
+     MUXCY:CI->O           1   0.235   1.112  dkver1_x0/sigdetect_10d_019b4552c7/relational/Mcompar_result_18_3_rel_cy(5) (dkver1_x0/sigdetect_10d_019b4552c7/relational/Mcompar_result_18_3_rel_cy(5))
+     LUT6:I1->O            1   0.254   0.000  dkver1_x0/sigdetect_10d_019b4552c7/relational/Mcompar_result_18_3_rel_cy(6)_inv1 (dkver1_x0/sigdetect_10d_019b4552c7/relational/result_18_3_rel)
+     FDE:D                     0.074          dkver1_x0/sigdetect_10d_019b4552c7/relational/op_mem_32_22_0
+    ----------------------------------------
+    Total                      8.220ns (2.393ns logic, 5.827ns route)
+                                       (29.1% logic, 70.9% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'okUH<0>'
+  Clock period: 9.295ns (frequency: 107.582MHz)
+  Total number of paths / destination ports: 39448 / 5588
+-------------------------------------------------------------------------
+Delay:               9.295ns (Levels of Logic = 8)
+  Source:            okHI/core0/core0/ti_addr_1 (FF)
+  Destination:       u3_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.SIMPLE_PRIM18.ram (RAM)
+  Source Clock:      okUH<0> rising +-32
+  Destination Clock: okUH<0> rising +-32
+
+  Data Path: okHI/core0/core0/ti_addr_1 to u3_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.SIMPLE_PRIM18.ram
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q             12   0.525   1.499  core0/ti_addr_1 (okHE<33>)
+     end scope: 'okHI/core0:okHE<33>'
+     begin scope: 'epA3:okHE<33>'
+     LUT6:I1->O            1   0.254   1.137  ti_addr[7]_ep_addr[7]_equal_7_o81 (ti_addr[7]_ep_addr[7]_equal_7_o8)
+     LUT6:I0->O           35   0.254   1.570  ti_addr[7]_ep_addr[7]_equal_7_o83 (ti_addr[7]_ep_addr[7]_equal_7_o)
+     LUT2:I1->O            3   0.254   0.874  ep_read1 (ep_read)
+     end scope: 'epA3:ep_read'
+     begin scope: 'u3_fifo:rd_en'
+     LUT3:I1->O           22   0.250   1.334  U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/tmp_ram_rd_en1 (U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/tmp_ram_rd_en)
+     begin scope: 'u3_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr:ENB'
+     LUT2:I1->O            5   0.254   0.840  out4 (ramloop[0].ram.ram_enb)
+     RAMB16BWER:ENB            0.250          ramloop[0].ram.r/s6_noinit.ram/SDP.SIMPLE_PRIM18.ram
+    ----------------------------------------
+    Total                      9.295ns (2.041ns logic, 7.254ns route)
+                                       (22.0% logic, 78.0% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'okHI/core0/okHE<41>'
+  Clock period: 3.081ns (frequency: 324.570MHz)
+  Total number of paths / destination ports: 18 / 18
+-------------------------------------------------------------------------
+Delay:               3.081ns (Levels of Logic = 0)
+  Source:            okHI/core0/core0/a0/pm0/ram_1k_generate.s6.kcpsm6_rom (RAM)
+  Destination:       okHI/core0/core0/a0/pm0/ram_1k_generate.s6.kcpsm6_rom (RAM)
+  Source Clock:      okHI/core0/okHE<41> rising
+  Destination Clock: okHI/core0/okHE<41> rising
+
+  Data Path: okHI/core0/core0/a0/pm0/ram_1k_generate.s6.kcpsm6_rom to okHI/core0/core0/a0/pm0/ram_1k_generate.s6.kcpsm6_rom
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     RAMB16BWER:CLKB->DOB15    1   2.100   0.681  core0/a0/pm0/ram_1k_generate.s6.kcpsm6_rom (core0/a0/pm0/n0016<15>)
+     RAMB16BWER:DIB15          0.300          core0/a0/pm0/ram_1k_generate.s6.kcpsm6_rom
+    ----------------------------------------
+    Total                      3.081ns (2.400ns logic, 0.681ns route)
+                                       (77.9% logic, 22.1% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'okUH<0>'
+  Total number of paths / destination ports: 90 / 66
+-------------------------------------------------------------------------
+Offset:              6.602ns (Levels of Logic = 6)
+  Source:            okAA (PAD)
+  Destination:       okHI/core0/core0/a0/c0/t_count_11 (FF)
+  Destination Clock: okUH<0> rising +-32
+
+  Data Path: okAA to okHI/core0/core0/a0/c0/t_count_11
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IOBUF:IO->O          27   1.328   1.436  okHI/tbuf (okHI/okHC<37>)
+     begin scope: 'okHI/core0:okHC<37>'
+     LUT3:I2->O            3   0.254   1.196  core0/a0/c0/Mmux_t_count[23]_GND_19_o_mux_23_OUT1011 (core0/a0/c0/Mmux_t_count[23]_GND_19_o_mux_23_OUT101)
+     LUT5:I0->O            1   0.254   0.790  core0/a0/c0/t_state[31]_t_count[23]_select_94_OUT<11>22 (core0/a0/c0/t_state[31]_t_count[23]_select_94_OUT<11>22)
+     LUT5:I3->O            3   0.250   0.766  core0/a0/c0/t_state[31]_t_count[23]_select_94_OUT<11>23 (core0/a0/c0/t_state[31]_t_count[23]_select_94_OUT<11>2)
+     LUT5:I4->O            1   0.254   0.000  core0/a0/c0/t_state[31]_t_count[23]_select_94_OUT<9>1 (core0/a0/c0/t_state[31]_t_count[23]_select_94_OUT<9>)
+     FDRE:D                    0.074          core0/a0/c0/t_count_9
+    ----------------------------------------
+    Total                      6.602ns (2.414ns logic, 4.188ns route)
+                                       (36.6% logic, 63.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'sys_clk'
+  Total number of paths / destination ports: 56 / 56
+-------------------------------------------------------------------------
+Offset:              2.338ns (Levels of Logic = 3)
+  Source:            Adata<13> (PAD)
+  Destination:       U0_dkver1_cw/dkver1_x0/sigmux_1d_7b192397cd/mux1/pipe_16_22_0_13 (FF)
+  Destination Clock: sys_clk rising
+
+  Data Path: Adata<13> to U0_dkver1_cw/dkver1_x0/sigmux_1d_7b192397cd/mux1/pipe_16_22_0_13
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   1.328   0.682  Adata_13_IBUF (Adata_13_IBUF)
+     begin scope: 'U0_dkver1_cw:datain1<13>'
+     LUT3:I2->O            1   0.254   0.000  dkver1_x0/sigmux_1d_7b192397cd/mux1/Mmux_unregy_join_6_161 (dkver1_x0/sigmux_1d_7b192397cd/mux1/unregy_join_6_1(13))
+     FDE:D                     0.074          dkver1_x0/sigmux_1d_7b192397cd/mux1/pipe_16_22_0_13
+    ----------------------------------------
+    Total                      2.338ns (1.656ns logic, 0.682ns route)
+                                       (70.8% logic, 29.2% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'okUH<0>'
+  Total number of paths / destination ports: 72 / 39
+-------------------------------------------------------------------------
+Offset:              4.162ns (Levels of Logic = 2)
+  Source:            okHI/core0/core0/a0/c0/atmel_dout (FF)
+  Destination:       okAA (PAD)
+  Source Clock:      okUH<0> rising +-32
+
+  Data Path: okHI/core0/core0/a0/c0/atmel_dout to okAA
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDSE:C->Q             2   0.525   0.725  core0/a0/c0/atmel_dout (okCH<35>)
+     end scope: 'okHI/core0:okCH<35>'
+     IOBUF:I->IO               2.912          okHI/tbuf (okAA)
+    ----------------------------------------
+    Total                      4.162ns (3.437ns logic, 0.725ns route)
+                                       (82.6% logic, 17.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'sys_clk'
+  Total number of paths / destination ports: 8 / 8
+-------------------------------------------------------------------------
+Offset:              5.142ns (Levels of Logic = 2)
+  Source:            s_fullcnt0_24 (FF)
+  Destination:       led<7> (PAD)
+  Source Clock:      sys_clk rising
+
+  Data Path: s_fullcnt0_24 to led<7>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDRE:C->Q             2   0.525   0.725  s_fullcnt0_24 (s_fullcnt0_24)
+     INV:I->O              2   0.255   0.725  led<7>1_INV_0 (led_7_OBUF)
+     OBUF:I->O                 2.912          led_7_OBUF (led<7>)
+    ----------------------------------------
+    Total                      5.142ns (3.692ns logic, 1.450ns route)
+                                       (71.8% logic, 28.2% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock okHI/core0/okHE<41>
+-------------------+---------+---------+---------+---------+
+                   | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock       |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+-------------------+---------+---------+---------+---------+
+okHI/core0/okHE<41>|    3.081|         |         |         |
+-------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock okUH<0>
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+okUH<0>        |    9.295|         |         |         |
+sys_clk        |    1.280|         |         |         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock sys_clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+okUH<0>        |    3.948|         |         |         |
+sys_clk        |    8.220|         |         |         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 16.00 secs
+Total CPU time to Xst completion: 15.45 secs
+ 
+--> 
+
+Total memory usage is 301032 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   25 (   0 filtered)
+Number of infos    :   57 (   0 filtered)
+
