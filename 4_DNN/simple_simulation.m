@@ -92,21 +92,97 @@ figure(3), mesh(out1);
 %% 신경망 피팅 학습
 
 return;
-%% 검증용 그래프 출력
-a1count = 10;
-a1mean  = c1mean;
-a1var   = c1var;
-a1 = [c1mean(1)+c1var*randn(a1count,1) c1mean(2)+c1var*randn(a1count,1)];
+%% 가상 데이터 시뮬레이션
+clear all;
+count = 1000;
+c1count = count;
+c1mean  = [5 5];
+c1var   = 1.5;
+c1 = [c1mean(1)+c1var*randn(c1count,1) c1mean(2)+c1var*randn(c1count,1)];
 
-a5count = 10;
-a5mean  = c5mean;
-a5var   = c5var;
-a5 = [c5mean(1)+c5var*randn(a5count,1) c5mean(2)+c5var*randn(a5count,1)];
+c2count = count;
+c2mean  = [10 10];
+c2var   = 1.5;
+c2 = [c2mean(1)+c2var*randn(c2count,1) c2mean(2)+c2var*randn(c2count,1)];
 
-out_a1 = net(a1');
-out_a5 = net(a5');
-out_a1 = logical(out_a1(1,:) > out_a5(1,:));
-% out_a5 = ~out_a1;
+c3count = count;
+c3mean  = [15 15];
+c3var   = 1.5;
+c3 = [c3mean(1)+c3var*randn(c3count,1) c3mean(2)+c3var*randn(c3count,1)];
 
-figure(2), plot(out_a1,'o'), hold on; plot(out_a5,'x'); hold off;
+c4count = count;
+c4mean  = [20 20];
+c4var   = 1.5;
+c4 = [c4mean(1)+c4var*randn(c4count,1) c4mean(2)+c4var*randn(c4count,1)];
 
+figure,
+subplot(2,2,1), 
+plot( c1(:,1), c1(:,2), 'ro' ); hold on;
+plot( c2(:,1), c2(:,2), 'bo' ); hold on;
+plot( c3(:,1), c3(:,2), 'go' ); hold on;
+plot( c4(:,1), c4(:,2), 'co' ); hold off;
+title('scatter plot'); xlabel('A'); ylabel('B');
+subplot(2,2,3), 
+histogram(c1(:,1),50); hold on; 
+histogram(c2(:,1),50); hold on;
+histogram(c3(:,1),50); hold on;
+histogram(c4(:,1),50); hold off;
+title('x axis histogram'); xlabel('A'); ylabel('count');
+subplot(2,2,4), 
+histogram(c1(:,2),50); hold on; 
+histogram(c2(:,2),50); hold on;
+histogram(c3(:,2),50); hold on;
+histogram(c4(:,2),50); hold off;
+title('y axis histogram'); xlabel('B'); ylabel('count');
+X = [c1; c2; c3; c4];
+L = [repmat(1,size(c1,1),1); repmat(2,size(c2,1),1); repmat(3,size(c3,1),1); repmat(4,size(c4,1),1)];
+[Y, W, lambda] = LDA(X, L);
+Y = Y*50;
+y1 = Y(1:count,:);
+y2 = Y(count+1:2*count,:);
+y3 = Y(2*count+1:3*count,:);
+y4 = Y(3*count+1:4*count,:);
+subplot(2,2,2), 
+histogram(y1(:,1),50); hold on; 
+histogram(y2(:,1),50); hold on;
+histogram(y3(:,1),50); hold on;
+histogram(y4(:,1),50); hold off;
+title('B=A axis histogram'); xlabel('B=A'); ylabel('count');
+
+ctrain = [  c1' ...
+            c2' ...
+            c3' ...
+            c4' ...
+         ];
+ctarget = [ repmat([10], 1, count) ...
+            repmat([20], 1, count) ...
+            repmat([30], 1, count) ...
+            repmat([40], 1, count) ...
+          ];
+
+size_Trainset = size(ctrain,2);
+shuffle_idx = randperm(size_Trainset);
+shuffled_Trainset = ctrain(:,shuffle_idx);
+shuffled_Target = ctarget(:,shuffle_idx);
+
+%% 
+% Create a Fitting Network
+% g = gpuDevice(1);
+trainFcn = 'trainlm';
+netXY_3 = fitnet([20 5 1], trainFcn);
+% hiddenLayerSize/2]); 100 50 40 30 20 10
+% netXY_3.layers{1}.transferFcn = 'logsig';
+% netXY_3.layers{2}.transferFcn = 'logsig';
+% netXY_2.layers{3}.transferFcn = 'logsig';
+% netXY_2.layers{4}.transferFcn = 'hardlim';
+% netXY_2.layers{5}.transferFcn = 'hardlim';
+% netXY_2.layers{6}.transferFcn = 'hardlim';
+netXY_3.divideParam.trainRatio = 70/100;
+netXY_3.divideParam.valRatio = 15/100;
+netXY_3.divideParam.testRatio = 15/100;
+% Train the Network
+numC = size(shuffled_Trainset(1,:),2);
+numC = round(numC * 1);
+% Train the Network
+[netXY_3 tr] = train(netXY_3, (shuffled_Trainset(:,1:numC)), shuffled_Target(:,1:numC), 'useParallel','yes','useGPU','yes');
+% save('netXY_3.mat','netXY_3');

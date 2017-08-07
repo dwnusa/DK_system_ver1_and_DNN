@@ -259,11 +259,6 @@ end
 % train_label = train_label(train_idx);
 
 %% 학습 데이터 숫자 일치시키기
-% train_idx : 전체 학습용 데이터 인덱스
-% train_xy : 전체 학습용 데이터 인덱스로 추출한 학습용 데이터
-% train_label : 전체 학습용 데이터 인덱스의 추출한 라벨(픽셀번호)
-% train_cnt : 픽셀별 학습용 데이터 수
-% trainset_idx : 픽셀번호 순서로 정렬시키기 위한 인덱스, 픽셀별 데이터 숫자 같음 (count 변수로 일치시킴)
 figure(4),
 train_cnt = zeros(12,12);
 trainset_idx = [];
