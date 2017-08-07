@@ -186,3 +186,24 @@ numC = round(numC * 1);
 % Train the Network
 [netXY_3 tr] = train(netXY_3, (shuffled_Trainset(:,1:numC)), shuffled_Target(:,1:numC), 'useParallel','yes','useGPU','yes');
 % save('netXY_3.mat','netXY_3');
+%%
+x = 0.5:0.5:30;
+y = 0.5:0.5:30;
+z = [1:5:40];
+[X Y] = meshgrid(x, y);
+tri = delaunay(X,Y);
+Z = netXY_3([X(:) Y(:)]');
+out = netXY_3([c1(:,1); c2(:,1); c3(:,1); c4(:,1)]');
+figure,
+subplot(2,2,1), contour(X, Y, reshape(Z,size(x,2),size(y,2)),z, 'ShowText','on'); hold on;
+subplot(2,2,1), plot( c1(:,1), c1(:,2), 'ro' ); hold on;
+subplot(2,2,1), plot( c2(:,1), c2(:,2), 'bo' ); hold on;
+subplot(2,2,1), plot( c3(:,1), c3(:,2), 'go' ); hold on;
+subplot(2,2,1), plot( c4(:,1), c4(:,2), 'co' ); hold on;
+% axis([0 inf], [0 inf], [0 inf]);
+subplot(2,2,2), trisurf(tri, X, Y, reshape(Z,size(x,2),size(y,2))); % camlight right
+% axis tight;
+% hold on;
+% subplot(2,2,2), plot3([c1(:,1); c2(:,1); c3(:,1)], [c1(:,2); c2(:,2); c3(:,2)], Z,20,20),'.','MarkerSize', 8);
+subplot(2,2,3), histogram([c1(:,1); c2(:,1); c3(:,1); c4(:,1)], 100);
+subplot(2,2,4), histogram(out,100);
